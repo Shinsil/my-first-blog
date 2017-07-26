@@ -6,19 +6,14 @@
 		<div>
 			<h1><a href = "">Shinsil's Blog</a></h1>
 		</div>
-
-		<div>
-			<p>published : 25.07.2017 , 17 :01</p>
-			<h2><a href="">My first post</a></h2>
-			<p>Hello Django!</p>
-		</div>
-		<div>
-			<p>published : 26.07.2017 , 13 :03</p>
-			<h2><a href="">My second post</a></h2>
-			<p>I can make my own homepage!<br />
-			   Let's do it!</p>
-		</div>
 		
+	{% for post in posts %}	
+		<div>
+			<p>published: {{ post.published_date}}</p>
+			<h1><a href="">{{post.title}}</a></h1>
+			<p>{{post.text|linebreaksbr}}</p>
+		</div>
+	{% endfor %}	
 	
 	</body>
 </html>
